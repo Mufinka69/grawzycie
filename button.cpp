@@ -1,5 +1,7 @@
 #include "button.h"
 
+Button::Button(){}
+
 Button::Button(int x, int y, int w, int h){
     this->x = x;
     this->y = y;

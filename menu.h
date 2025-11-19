@@ -1,14 +1,16 @@
 #pragma once
 
-#include "main.h"
+enum Game_state{
+    MAIN_MENU,
+    OPTIONS_MENU,
+    GAME_PLAY,
+    GAME_PAUSE
+};
 
-class Menu{
-private:
-    Button *buttons;
-    bool is_visable;
-public:
-    Menu(Button *buttons);
-    ~Menu();
-    void menu_draw();
-    int menu_click();
+enum LifeRules {
+    CLASSIC,
+    HIGH_LIFE,
+    CORAL,
+    DAY_NIGHT,
+    CUSTOM
 };

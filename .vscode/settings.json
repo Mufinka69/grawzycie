@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp"
     }
 }

@@ -10,7 +10,7 @@ CFLAGS = -I$(INCLUDE_PATH) -Wall -std=c++14
 LDFLAGS = -L. -L$(LIB_PATH) -lraylib -lopengl32 -lgdi32 -lwinmm
 
 
-SRC = main.cpp game_of_life.cpp button.cpp game.cpp menu.cpp
+SRC = main2.cpp game_of_life.cpp button.cpp game.cpp menu.cpp
 OUT = main.exe
 
 all:

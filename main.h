@@ -1,12 +1,12 @@
 #pragma once
 
-#include <iostream>
 
+#include <iostream>
 #include <raylib.h>
 #include <cstdlib>
 #include <cstring>
-#include "game_of_life.h"
-#include "button.h"
+
+#include "raygui.h"
 
 
 #define WINDOW_WIDTH 800

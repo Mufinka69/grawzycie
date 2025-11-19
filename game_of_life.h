@@ -2,7 +2,7 @@
 
 #include "main.h"
 
-class Game{
+class Game_of_life{
 private:
     Image image;
     Color *pixels_copy;
@@ -12,7 +12,8 @@ private:
     bool *alive_copy;
 
 public:
-    Game();
+    Game_of_life();
+    void draw();
     Texture2D get_texture();
     void rand_space(int x, int r);
     void copy_space();

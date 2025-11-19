@@ -1,10 +1,12 @@
 #include "main.h"
+#include "game_of_life.h"
+#include "button.h";
 
 int main () {
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "dd!");
     SetTargetFPS(20);
 
-    Game game;
+    Game_of_life game;
     Button button = Button(10,10,100,100);
     game.rand_space(2, 6);
 

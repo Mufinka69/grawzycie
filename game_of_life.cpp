@@ -1,7 +1,7 @@
 #include "game_of_life.h"
 
 
-Game::Game(){
+Game_of_life::Game_of_life(){
     image = GenImageColor(GAME_WIDTH, GAME_HEIGHT, WHITE);
     texture = LoadTextureFromImage(image);
     pixels_copy = (Color*)malloc(GAME_WIDTH * GAME_HEIGHT * sizeof(Color));
@@ -20,11 +20,17 @@ Game::Game(){
     UpdateTexture(texture, image.data);
 }
 
-Texture2D Game::get_texture(){
+void Game_of_life::draw(){
+    // DrawTexture(get_texture(), 0, 0, WHITE);
+    DrawTexturePro(get_texture(), Rectangle{0, 0, GAME_WIDTH, GAME_HEIGHT},
+                   Rectangle{0, 0, (float)GetScreenWidth(), (float)GetScreenHeight()}, Vector2{0, 0}, 0.0f, WHITE);
+}
+
+Texture2D Game_of_life::get_texture(){
     return texture;
 }
 
-void Game::rand_space(int x, int r){
+void Game_of_life::rand_space(int x, int r){
     Color *pixels = (Color*)image.data;
     for(int i = r; i < GAME_HEIGHT - r; i++){
         for(int j = r; j < GAME_WIDTH - r; j++){
@@ -43,12 +49,12 @@ void Game::rand_space(int x, int r){
     UpdateTexture(texture, image.data);
 }
 
-void Game::copy_space(){
+void Game_of_life::copy_space(){
     memcpy(pixels_copy, (Color*)image.data, GAME_WIDTH * GAME_HEIGHT * sizeof(Color));
 }
 
 
-void Game::game_of_life(){
+void Game_of_life::game_of_life(){
     Color *pixels = (Color*)image.data;
     int somsiedzi = 0;
     for(int i = 1; i < GAME_HEIGHT - 1 ;i++){
@@ -79,7 +85,7 @@ void Game::game_of_life(){
     UpdateTexture(texture, pixels);
 }
 
-void Game::day_and_night(){
+void Game_of_life::day_and_night(){
     Color *pixels = (Color*)image.data;
     int somsiedzi = 0;
     for(int i = 1; i < GAME_HEIGHT - 1 ;i++){
@@ -116,7 +122,7 @@ void Game::day_and_night(){
 }
 
 // 1, 3, 3, 2, 8
-void Game::larger_than_life(int zasieg, int d_min_somsiadow, int d_max_somsiadow, int a_min_somsiadow, int a_max_somsiadow){
+void Game_of_life::larger_than_life(int zasieg, int d_min_somsiadow, int d_max_somsiadow, int a_min_somsiadow, int a_max_somsiadow){
     Color *pixels = (Color*)image.data;
     int somsiedzi = 0;
     for(int i = zasieg; i < GAME_HEIGHT - zasieg ;i++){
