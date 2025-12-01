@@ -10,7 +10,7 @@ int main () {
     SetTargetFPS(20);
     SetExitKey(KEY_NULL);
     Game game;
-    while (!WindowShouldClose()){
+    while (!WindowShouldClose() && game.is_running){
         game.run();
     }
 

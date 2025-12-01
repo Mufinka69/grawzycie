@@ -12,5 +12,6 @@ enum LifeRules {
     HIGH_LIFE,
     CORAL,
     DAY_NIGHT,
+    ROBACZKI,
     CUSTOM
 };
